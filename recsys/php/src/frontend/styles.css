@@ -1,0 +1,207 @@
+/* ==== GLOBAL ==== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    font-family: Inter, system-ui, sans-serif;
+    background: #0d1117;
+    color: #e6edf3;
+    min-height: 100vh;
+}
+
+.muted { color: #8b9db1; }
+.small { font-size: 13px; }
+.hidden { display: none; }
+
+
+/* ==== GLASS EFFECT ==== */
+.glass {
+    background: rgba(255,255,255,0.03);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255,255,255,0.06);
+}
+
+
+/* ==== TOP BAR ==== */
+.topbar {
+    padding: 14px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    font-size: 22px;
+    font-weight: 700;
+    color: #7dd3fc;
+}
+
+.top-controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+
+/* ==== BUTTONS ==== */
+.btn {
+    padding: 8px 16px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.05);
+    background: rgba(255,255,255,0.05);
+    color: #7dd3fc;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.15s;
+}
+
+.btn:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+.btn.small {
+    padding: 6px 12px;
+    font-size: 14px;
+}
+
+.secondary {
+    color: #9ca3af;
+}
+
+
+/* ==== MAIN ==== */
+.container {
+    width: 95%;
+    max-width: 820px;
+    margin: 20px auto;
+    padding-bottom: 40px;
+}
+
+
+/* ==== LOADING ==== */
+.loading {
+    text-align: center;
+    padding: 18px;
+    color: #7dd3fc;
+}
+
+
+/* ==== FEED ==== */
+.feed {
+    margin-top: 20px;
+}
+
+
+/* ==== POST CARD ==== */
+.post {
+    padding: 20px;
+    border-radius: 18px;
+    margin-bottom: 20px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.45);
+}
+
+.post-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.post-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #e8f2ff;
+}
+
+.post-body {
+    margin-top: 12px;
+    color: #9db2c7;
+    font-size: 15px;
+    line-height: 1.45;
+}
+
+
+/* ==== LIKE BUTTON ==== */
+.like-btn {
+    border: none;
+    background: transparent;
+    font-size: 22px;
+    cursor: pointer;
+    color: #ff6b81;
+    transition: 0.2s;
+}
+
+.like-btn:hover {
+    transform: scale(1.25);
+}
+
+
+/* ==== PAGINATION ==== */
+.pagination {
+    margin: 22px auto;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    align-items: center;
+}
+
+.page-info {
+    color: #9db2c7;
+}
+
+
+/* ==== MODAL ==== */
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-card {
+    width: 330px;
+    padding: 25px;
+    border-radius: 16px;
+}
+
+.modal-card input {
+    width: 100%;
+    margin: 12px 0;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    color: #e6edf3;
+}
+
+.modal-actions {
+    margin-top: 14px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+
+/* ==== EMPTY ==== */
+.empty {
+    text-align: center;
+    padding: 18px 0;
+}
+
+
+/* ==== RESPONSIVE ==== */
+@media (max-width: 600px) {
+    .post {
+        padding: 15px;
+    }
+    .post-title {
+        font-size: 16px;
+    }
+    .like-btn {
+        font-size: 20px;
+    }
+}

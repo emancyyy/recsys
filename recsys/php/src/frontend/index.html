@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Recsys Feed</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<script>
+(async () => {
+    try {
+        await fetch("/api/seed.php", { cache: "no-store" });
+        console.log("Seed executed automatically");
+    } catch(e) {
+        console.error("Seed auto-load failed:", e);
+    }
+})();
+</script>
+
+<body>
+
+<header class="topbar glass">
+    <div class="brand">Recsys Social</div>
+    <div class="top-controls">
+        <span id="currentUser" class="muted">Неавторизован</span>
+        <button id="btnLogin" class="btn">Войти</button>
+    </div>
+</header>
+
+
+<main class="container">
+
+    <div id="loading" class="loading hidden">Загрузка...</div>
+
+    <div id="feedList" class="feed"></div>
+
+    <div class="pagination">
+        <button id="prevPage" class="btn small">←</button>
+        <span id="pageInfo" class="page-info">1 / 1</span>
+        <button id="nextPage" class="btn small">→</button>
+        <button id="refreshRec" class="btn small secondary">Обновить рекомендации</button>
+    </div>
+
+</main>
+
+
+<!-- LOGIN MODAL -->
+<div id="modal" class="modal hidden">
+    <div class="modal-card glass">
+        <h2>Вход</h2>
+        <p class="muted small">Введите ваш User ID</p>
+
+        <input type="number" id="loginInput" placeholder="Например: 1">
+
+        <div class="modal-actions">
+            <button id="loginSave" class="btn">Войти</button>
+            <button id="loginCancel" class="btn secondary">Отмена</button>
+        </div>
+
+        <p class="hint muted small">Список пользователей: /api/users.php</p>
+    </div>
+</div>
+
+
+<script src="app.js"></script>
+</body>
+</html>
